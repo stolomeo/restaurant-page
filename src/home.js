@@ -1,5 +1,5 @@
 import "./style.css";
-import BreakfastPic from "./breakfast-1.jpg";
+import BreakfastPic from "./images/breakfast-1.jpg";
 
 const homeLoad = () => {
   const content = document.querySelector("#content");
