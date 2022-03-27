@@ -1,4 +1,5 @@
 import homeLoad from "./home";
+import menuLoad from "./menu";
 
 const createHeader = () => {
   const header = document.createElement("header");
@@ -31,3 +32,4 @@ const createHeader = () => {
 };
 createHeader();
 homeLoad();
+menuLoad();

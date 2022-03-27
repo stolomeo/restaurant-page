@@ -80,6 +80,9 @@ header {
   background-color: aqua;
   padding: 1.5rem 150px;
 }
+.home-container {
+  display: none;
+}
 .title {
   font-size: 3rem;
 }
