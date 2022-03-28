@@ -3,53 +3,52 @@ import Trifecta from "./images/trifecta.png";
 import theTraditional from "./images/the-traditional.png";
 
 const menuLoad = () => {
+  const content = document.querySelector("#content");
+
+  const menuOptions = [
+    {
+      image: Trifecta,
+      title: "Tri-fecta",
+    },
+    {
+      image: theTraditional,
+      title: "The Traditional",
+    },
+  ];
+
+  const menuItems = menuOptions.map((menuOption) => {
+    const menuItem = createMenuItem();
+    menuItem.addImage(menuOption.image);
+    menuItem.addTitle(menuOption.title);
+    return menuItem.menuItemDiv;
+  });
+
   const menuContainer = document.createElement("div");
   menuContainer.classList.add("menu-container");
+  menuContainer.append(...menuItems);
 
-  const firstItem = createMenuItem(
-    "menuItem1",
-    "trifectaImg",
-    Trifecta,
-    "Tri-fecta"
-  );
-  const secondItem = createMenuItem(
-    "menuItem2",
-    "theTraditionalImg",
-    theTraditional,
-    "The Traditional"
-  );
-  firstItem.createDiv(menuContainer);
-
-  const content = document.querySelector("#content");
   content.appendChild(menuContainer);
 };
 
-const createMenuItem = (menuItemDiv, menuItemImg, menuItemImgSrc, foodName) => {
-  const createDiv = (menuContainer) => {
-    menuItemDiv = document.createElement("div");
-    menuItemDiv.classList.add("menu-item");
-    menuContainer.appendChild(menuItem1);
+const createMenuItem = () => {
+  const menuItemDiv = document.createElement("div");
+  menuItemDiv.classList.add("menu-item");
 
-    return menuItemDiv;
+  const addImage = (src) => {
+    const menuImg = document.createElement("img");
+    menuImg.src = src;
+    menuItemDiv.append(menuImg);
   };
-  const addMenuItemImg = () => {
-    menuItemImg = new Image();
-    menuItemImg.classList.add("menu-item-img");
-    menuItemImg.src = menuItemImgSrc;
-    menuItemDiv.appendChild(menuItemImg);
-    return menuItemImg;
+  const addTitle = (text) => {
+    const menuTitle = document.createElement("h3");
+    menuTitle.textContent = text;
+    menuItemDiv.append(menuTitle);
   };
-  const addMenuItemName = () => {
-    menuItemName = document.createElement("h3");
-    menuItemName.classList.add("menu-item-name");
-    menuItemName.textContent = foodName;
-    menuItemName.appendChild(menuItemDiv);
-    return menuItemName;
-  };
+
   return {
-    createDiv,
-    addMenuItemImg,
-    addMenuItemName,
+    menuItemDiv,
+    addImage,
+    addTitle,
   };
 };
 
