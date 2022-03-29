@@ -1,6 +1,13 @@
 import "./style.css";
+import AvocadoToast from "./images/avocado-toast.png";
+import BuscuitsAndTurkeySausage from "./images/biscuits-and-turkey-sausage.png";
+import Chickichanga from "./images/chickichanga.png";
+import ElevatedEggSandwich from "./images/elevated-egg-sandwich.png";
+import FrenchToast from "./images/french-toast.png";
+import MultigrainPancake from "./images/multigrain-pancake.png";
+import SmokedSalmonBenedict from "./images/smoked-salmon-benedict.png";
+import Traditional from "./images/the-traditional.png";
 import Trifecta from "./images/trifecta.png";
-import theTraditional from "./images/the-traditional.png";
 
 const menuLoad = () => {
   const content = document.querySelector("#content");
@@ -11,8 +18,36 @@ const menuLoad = () => {
       title: "Tri-fecta",
     },
     {
-      image: theTraditional,
+      image: Traditional,
       title: "The Traditional",
+    },
+    {
+      image: AvocadoToast,
+      title: "Avocado Toast",
+    },
+    {
+      image: FrenchToast,
+      title: "French Toast",
+    },
+    {
+      image: MultigrainPancake,
+      title: "Multigrain Pancake",
+    },
+    {
+      image: ElevatedEggSandwich,
+      title: "Elevated Egg Sandwich",
+    },
+    {
+      image: BuscuitsAndTurkeySausage,
+      title: "Buscuits & Turkey Sausage",
+    },
+    {
+      image: Chickichanga,
+      title: "Chickichanga",
+    },
+    {
+      image: SmokedSalmonBenedict,
+      title: "Smoked SalmonB enedict",
     },
   ];
 
