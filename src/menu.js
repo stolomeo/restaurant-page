@@ -10,8 +10,8 @@ import Traditional from "./images/the-traditional.png";
 import Trifecta from "./images/trifecta.png";
 
 const menuLoad = () => {
-  const content = document.querySelector("#content");
-
+  const main = document.querySelector("main");
+  main.textContent = "";
   const menuOptions = [
     {
       image: Trifecta,
@@ -62,7 +62,7 @@ const menuLoad = () => {
   menuContainer.classList.add("menu-container");
   menuContainer.append(...menuItems);
 
-  content.appendChild(menuContainer);
+  main.appendChild(menuContainer);
 };
 
 const createMenuItem = () => {

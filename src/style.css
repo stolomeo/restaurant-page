@@ -81,10 +81,9 @@ header {
   padding: 1.5rem 150px;
 }
 .home-container {
-  display: none;
 }
 .menu-container {
-  display: none; /*flex*/
+  display: flex; /*flex*/
   flex-wrap: wrap;
   gap: 3rem;
   padding: 1.5rem 150px;
