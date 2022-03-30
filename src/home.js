@@ -1,24 +1,21 @@
 import "./style.css";
 import BreakfastPic from "./images/breakfast-1.jpg";
+import Pancake from "./images/pancake-blueberry.jpg";
 
 const homeLayout = () => {
   const homeContainerDiv = document.createElement("div");
   homeContainerDiv.classList.add("home-container");
 
   const myImage = new Image();
-  myImage.src = BreakfastPic;
+  myImage.src = Pancake;
 
-  const headline = document.createElement("div");
-  headline.classList.add("headline");
-  headline.innerHTML = "Welcome to Boomin' Breakfast!";
-
-  const description = document.createElement("div");
+  const description = document.createElement("h4");
   description.classList.add("description");
   description.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
   Proin nibh tortor, accumsan sed blandit in, venenatis quis elit. Donec in ex tellus. 
   Morbi sit amet sem vitae ex suscipit ultricies vel vel mauris.`;
 
-  homeContainerDiv.append(myImage, headline, description);
+  homeContainerDiv.append(myImage, description);
 
   return homeContainerDiv;
 };

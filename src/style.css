@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@300&display=swap");
 /* Box sizing rules */
 *,
 *::before,
@@ -35,6 +36,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: "Roboto Serif", serif;
 }
 
 /* A elements that don't have a class get default styles */
@@ -81,21 +83,32 @@ header {
   padding: 1.5rem 150px;
 }
 .home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  padding-left: 150px;
+  padding-right: 150px;
+  font-size: 1.5rem;
 }
 .menu-container {
-  display: flex; /*flex*/
+  display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 1rem;
   padding: 1.5rem 150px;
+  justify-content: center;
 }
+
 .menu-item {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   box-shadow: 1px 5px 12px 0 rgb(83 78 76 / 10%);
+  width: 350px;
 }
 .menu-item img {
   width: 300px;
+  align-self: center;
 }
 .form-container {
   max-width: 420px;
@@ -103,6 +116,7 @@ header {
 }
 
 .title {
+  font-family: "Roboto Serif", serif;
   font-size: 3rem;
 }
 nav {
@@ -114,10 +128,18 @@ button {
   width: 100px;
   height: 50px;
   cursor: pointer;
+  line-height: 1;
+  margin: 0.5em;
+  border-radius: 5px;
+  transition: 0.25s;
+  cursor: pointer;
 }
-img {
-  width: 200px;
-  border-radius: 1rem;
+.header-left {
+  display: flex;
+}
+.home-container img {
+  flex-basis: 50%;
+  width: 15%;
 }
 h2 {
   text-align: center;
@@ -125,6 +147,8 @@ h2 {
 }
 h3 {
   font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-left: 0.7rem;
 }
 
 .userinfo {
@@ -168,4 +192,11 @@ textarea {
 }
 [type="submit"]:hover {
   background: #cc4949;
+}
+h4 {
+  padding: 50px;
+  text-align: center;
+}
+.header-img {
+  width: 40px;
 }

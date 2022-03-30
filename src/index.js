@@ -1,14 +1,23 @@
 import homeLoad from "./home";
 import menuLoad from "./menu";
 import aboutLoad from "./about";
-
+import PancakeIcon from "./images/pancake-french-svgrepo-com.svg";
 const createHeader = () => {
   const headerEl = document.createElement("header");
+
+  const headerLeftEl = document.createElement("div");
+  headerLeftEl.classList.add("header-left");
+  headerEl.appendChild(headerLeftEl);
 
   const titleDiv = document.createElement("div");
   titleDiv.classList.add("title");
   titleDiv.textContent = "Boomin` Breakfast";
-  headerEl.appendChild(titleDiv);
+  headerLeftEl.appendChild(titleDiv);
+
+  const iconEl = document.createElement("img");
+  iconEl.classList.add("header-img");
+  iconEl.src = PancakeIcon;
+  headerLeftEl.appendChild(iconEl);
 
   const nav = createNav();
   headerEl.appendChild(nav);
@@ -72,5 +81,4 @@ const resetBtns = () => {
   });
 };
 
-console.log(resetBtns());
 homeLoad();
