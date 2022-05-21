@@ -1,7 +1,20 @@
-This project was completed for The Odin Project Javascript Restaurant Page Assignment. The aim of the project was to make a functional multi page Restaurant website using WebPack to bundle files.
+# restaurant-page
 
-## Built With
+A dynamically rendering restaurant web page built entirely with vanilla JavaScript.
 
-- Vanilla JS
-- HTML5
-- CSS3
+The goal was to use JavaScript alone to generate the entire contents of the website. Webpack is being used here to bundle my modules.
+
+## Getting started
+
+```
+git clone https://github.com/stolomeo/restaurant-page.git
+cd restaurant-page
+npm install
+npm run build
+```
+
+## Built with
+
+- JavaScript
+- [webpack](https://webpack.js.org/)
+- [webpack-CLI](https://www.npmjs.com/package/webpack-cli/)
