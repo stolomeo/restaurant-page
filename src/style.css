@@ -140,7 +140,7 @@ textarea {
 [type="submit"]:hover {
   background: #cc4949;
 }
-.homeDescription {
+.home-description {
   padding: 50px;
   text-align: center;
   font-size: 32px;

@@ -1,34 +1,25 @@
 import "../style.css";
 import Pancake from "../assets/pancake-blueberry.jpg";
 import { clearMain } from "../utils/main";
+import { Container, Img, TextElement } from "../utils/elementClasses";
 
-const createHomeContainer = () => {
-  const homeContainer = document.createElement("div");
-  homeContainer.classList.add("home-container");
-  return homeContainer;
-};
-
-const createHomeImg = () => {
-  const homeImg = new Image();
-  homeImg.src = Pancake;
-  return homeImg;
-};
-
-const createHomeDescription = () => {
-  const homeDescription = document.createElement("h2");
-  homeDescription.classList.add("homeDescription");
-  homeDescription.innerHTML = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+const homeContainer = new Container("homeContainer", "div", "home-container");
+const homeImg = new Img("homeImg", Pancake);
+const homeDescription = new TextElement(
+  "homeDescrption",
+  "h2",
+  "home-description",
+  `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
   Proin nibh tortor, accumsan sed blandit in, venenatis quis elit. Donec in ex tellus. 
-  Morbi sit amet sem vitae ex suscipit ultricies vel vel mauris.`;
-  return homeDescription;
-};
+  Morbi sit amet sem vitae ex suscipit ultricies vel vel mauris.`
+);
 
 const appendHomeItems = () => {
-  const homeContainer = createHomeContainer();
-  const homeImg = createHomeImg();
-  const homeDescription = createHomeDescription();
-  homeContainer.append(homeImg, homeDescription);
-  return homeContainer;
+  const homeContainerEl = homeContainer.createContainer();
+  const homeImgEl = homeImg.createImg();
+  const homeDescriptionEl = homeDescription.createTextElement();
+  homeContainerEl.append(homeImgEl, homeDescriptionEl);
+  return homeContainerEl;
 };
 
 const appendHomeToMain = () => {

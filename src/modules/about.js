@@ -19,7 +19,6 @@ const submitBtnConstructor = (type, value) => {
 const createFormHeader = () => {
   const formHeader = document.createElement("h2");
   formHeader.textContent = "CONTACT US";
-
   return formHeader;
 };
 
