@@ -1,11 +1,23 @@
 import appendHomeToMain from "./home";
 import appendMenuToMain from "./menu";
 import appendAboutToMain from "./about";
+import { selectButtons } from "..";
 
 const createNav = () => {
   const nav = document.createElement("nav");
   nav.classList.add("nav");
   return nav;
+};
+
+const removeButtonActive = () => {
+  const buttons = selectButtons();
+  buttons.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+};
+
+const setButtonActive = (btn) => {
+  btn.classList.add("active");
 };
 
 class navBtn {
@@ -23,7 +35,8 @@ class navBtn {
     this.element.addEventListener("click", (e) => {
       const { classList } = e.target;
       if (classList.contains("active")) return;
-      setActiveButton(this.element);
+      removeButtonActive();
+      setButtonActive(this.element);
       this.func();
     });
   }
@@ -31,7 +44,9 @@ class navBtn {
 
 const navHomeBtn = new navBtn("navHomeBtn", "Home", appendHomeToMain);
 const navMenuBtn = new navBtn("navMenuBtn", "Menu", appendMenuToMain);
-const navAboutBtn = new navBtn("navHomeBtn", "Home", appendAboutToMain);
+const navAboutBtn = new navBtn("navAboutBtn", "About", appendAboutToMain);
+
+export const navBtns = [navHomeBtn, navMenuBtn, navAboutBtn];
 
 const appendNav = () => {
   const nav = createNav();
