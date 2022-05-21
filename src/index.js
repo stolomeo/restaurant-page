@@ -1,19 +1,13 @@
-import appendHomeToMain from "./modules/home";
+import { createHeader } from "./modules/Header/headerFunctions";
+import { loadHome } from "./modules/Home/homeFunctions";
+import { navBtns } from "./modules/Nav/navElements";
 import { createMain } from "./utils/main";
-import appendNavToHeader from "./modules/header";
-import { navBtns } from "./modules/nav";
 
 const content = document.querySelector("#content");
-content.append(appendNavToHeader());
-content.append(createMain());
-
-export const selectButtons = () => {
-  const buttons = document.querySelectorAll(".nav button");
-  return buttons;
-};
+content.append(createHeader(), createMain());
 
 navBtns.forEach((btn) => {
   btn.handleClick();
 });
 
-appendHomeToMain();
+loadHome();
