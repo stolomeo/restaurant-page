@@ -1,4 +1,5 @@
 import "../style.css";
+import { clearMain } from "../utils/main";
 
 const formConstructor = (tagName, type, className, placeholder) => {
   let el = document.createElement(tagName);
@@ -15,8 +16,7 @@ const submitBtnConstructor = (type, value) => {
 };
 
 const aboutLoad = () => {
-  const main = document.querySelector("main");
-  main.textContent = "";
+  const main = clearMain();
   const formHeader = document.createElement("h2");
   const formContainerEl = document.createElement("div");
 

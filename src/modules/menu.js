@@ -1,90 +1,49 @@
 import "../style.css";
-import AvocadoToast from "./assets/avocado-toast.png";
-import BuscuitsAndTurkeySausage from "./assets/biscuits-and-turkey-sausage.png";
-import Chickichanga from "./assets/chickichanga.png";
-import ElevatedEggSandwich from "./assets/elevated-egg-sandwich.png";
-import FrenchToast from "./assets/french-toast.png";
-import MultigrainPancake from "./assets/multigrain-pancake.png";
-import SmokedSalmonBenedict from "./assets/smoked-salmon-benedict.png";
-import Traditional from "./assets/the-traditional.png";
-import Trifecta from "./assets/trifecta.png";
+import { clearMain } from "../utils/main";
+import { menuOptionsList } from "../utils/menuOptions";
 
-const menuLoad = () => {
-  const main = document.querySelector("main");
-  main.textContent = "";
-  const menuOptions = [
-    {
-      image: Trifecta,
-      title: "Tri-fecta",
-    },
-    {
-      image: Traditional,
-      title: "The Traditional",
-    },
-    {
-      image: AvocadoToast,
-      title: "Avocado Toast",
-    },
-    {
-      image: FrenchToast,
-      title: "French Toast",
-    },
-    {
-      image: MultigrainPancake,
-      title: "Multigrain Pancake",
-    },
-    {
-      image: ElevatedEggSandwich,
-      title: "Elevated Egg Sandwich",
-    },
-    {
-      image: BuscuitsAndTurkeySausage,
-      title: "Buscuits & Turkey Sausage",
-    },
-    {
-      image: Chickichanga,
-      title: "Chickichanga",
-    },
-    {
-      image: SmokedSalmonBenedict,
-      title: "Smoked SalmonB enedict",
-    },
-  ];
-
-  const menuItems = menuOptions.map((menuOption) => {
-    const menuItem = createMenuItem();
-    menuItem.addImage(menuOption.image);
-    menuItem.addTitle(menuOption.title);
-    return menuItem.menuItemDiv;
-  });
-
+const createMenuContainer = () => {
   const menuContainer = document.createElement("div");
   menuContainer.classList.add("menu-container");
-  menuContainer.append(...menuItems);
-
-  main.appendChild(menuContainer);
+  return menuContainer;
 };
 
-const createMenuItem = () => {
-  const menuItemDiv = document.createElement("div");
-  menuItemDiv.classList.add("menu-item");
-
-  const addImage = (src) => {
-    const menuImg = document.createElement("img");
-    menuImg.src = src;
-    menuItemDiv.append(menuImg);
-  };
-  const addTitle = (text) => {
-    const menuTitle = document.createElement("h3");
-    menuTitle.textContent = text;
-    menuItemDiv.append(menuTitle);
-  };
-
-  return {
-    menuItemDiv,
-    addImage,
-    addTitle,
-  };
+const createMenuCard = () => {
+  const menuCard = document.createElement("div");
+  menuCard.classList.add("menu-item");
+  return menuCard;
 };
 
-export default menuLoad;
+const createMenuImg = (src) => {
+  const menuImg = document.createElement("img");
+  menuImg.src = src;
+  return menuImg;
+};
+
+const createMenuTitle = (title) => {
+  const menuTitle = document.createElement("h3");
+  menuTitle.textContent = title;
+  return menuTitle;
+};
+
+const menuOptions = menuOptionsList.map((menuOption) => {
+  const menuImg = createMenuImg(menuOption.image);
+  const menuTitle = createMenuTitle(menuOption.title);
+  const menuCard = createMenuCard();
+  menuCard.append(menuImg, menuTitle);
+  return menuCard;
+});
+
+const appendMenuContainer = () => {
+  const menuContainer = createMenuContainer();
+  menuContainer.append(...menuOptions);
+  return menuContainer;
+};
+
+const appendMenuToMain = () => {
+  const main = clearMain();
+  main.appendChild(appendMenuContainer());
+  return main;
+};
+
+export default appendMenuToMain;

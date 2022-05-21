@@ -1,5 +1,6 @@
 import "../style.css";
-import Pancake from "./assets/pancake-blueberry.jpg";
+import Pancake from "../assets/pancake-blueberry.jpg";
+import { clearMain } from "../utils/main";
 
 const createHomeContainer = () => {
   const homeContainer = document.createElement("div");
@@ -30,10 +31,9 @@ const appendHomeItems = () => {
   return homeContainer;
 };
 
-const loadHome = () => {
-  const main = document.querySelector("main");
-  main.textContent = "";
+const appendHomeToMain = () => {
+  const main = clearMain();
   main.appendChild(appendHomeItems());
 };
 
-export default loadHome;
+export default appendHomeToMain;

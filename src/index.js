@@ -1,7 +1,8 @@
-import loadHome from "./modules/home";
-import menuLoad from "./modules/menu";
+import appendHomeToMain from "./modules/home";
 import aboutLoad from "./modules/about";
-import PancakeIcon from "./modules/assets/pancake-french-svgrepo-com.svg";
+import PancakeIcon from "./assets/pancake-french-svgrepo-com.svg";
+import appendMenuToMain from "./modules/menu";
+import { createMain } from "./utils/main";
 
 const createHeader = () => {
   const headerEl = document.createElement("header");
@@ -34,7 +35,7 @@ const createNav = () => {
   homeBtn.addEventListener("click", (e) => {
     if (e.target.classList.contains("active")) return;
     setActiveButton(homeBtn);
-    loadHome();
+    appendHomeToMain();
   });
 
   const menuBtn = document.createElement("button");
@@ -42,7 +43,7 @@ const createNav = () => {
   menuBtn.addEventListener("click", (e) => {
     if (e.target.classList.contains("active")) return;
     setActiveButton(menuBtn);
-    menuLoad();
+    appendMenuToMain();
   });
   const aboutBtn = document.createElement("button");
   aboutBtn.textContent = "About";
@@ -58,11 +59,6 @@ const createNav = () => {
 
 const content = document.querySelector("#content");
 content.append(createHeader());
-
-const createMain = () => {
-  const main = document.createElement("main");
-  return main;
-};
 
 content.append(createMain());
 const setActiveButton = () => {
@@ -82,4 +78,4 @@ const resetBtns = () => {
   });
 };
 
-loadHome();
+appendHomeToMain();
