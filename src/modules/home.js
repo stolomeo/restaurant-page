@@ -16,9 +16,10 @@ const homeDescription = new TextElement(
 
 const appendHomeItems = () => {
   const homeContainerEl = homeContainer.createContainer();
-  const homeImgEl = homeImg.createImg();
-  const homeDescriptionEl = homeDescription.createTextElement();
-  homeContainerEl.append(homeImgEl, homeDescriptionEl);
+  homeContainerEl.append(
+    homeImg.createImg(),
+    homeDescription.createTextElement()
+  );
   return homeContainerEl;
 };
 

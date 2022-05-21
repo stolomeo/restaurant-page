@@ -1,8 +1,18 @@
-export class Container {
-  constructor(name, className, type) {
+export class Element {
+  constructor(name, type) {
     this.name = name;
-    this.className = className;
     this.type = type;
+  }
+  createElement() {
+    this.name = document.createElement(this.type);
+    return this.name;
+  }
+}
+
+export class Container extends Element {
+  constructor(name, className, type) {
+    super(name, type);
+    this.className = className;
   }
   createContainer() {
     this.name = document.createElement(this.type);
@@ -11,9 +21,9 @@ export class Container {
   }
 }
 
-export class Img {
+export class Img extends Element {
   constructor(name, source) {
-    this.name = name;
+    super(name);
     this.source = source;
   }
   createImg() {
@@ -23,11 +33,9 @@ export class Img {
   }
 }
 
-export class TextElement {
+export class TextElement extends Container {
   constructor(name, className, type, textContent) {
-    this.name = name;
-    this.className = className;
-    this.type = type;
+    super(name, className, type);
     this.textContent = textContent;
   }
   createTextElement() {

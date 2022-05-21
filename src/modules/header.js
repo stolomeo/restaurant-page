@@ -1,42 +1,27 @@
 import createNav from "./nav";
 import PancakeIcon from "../assets/pancake-french-svgrepo-com.svg";
+import { Container, Element, Img, TextElement } from "../utils/elementClasses";
 
-const createHeaderContainer = () => {
-  const header = document.createElement("header");
-  return header;
-};
-
-const createHeaderLeft = () => {
-  const headerLeft = document.createElement("div");
-  headerLeft.classList.add("header-left");
-  return headerLeft;
-};
-
-const createHeaderTitle = () => {
-  const headerTitle = document.createElement("div");
-  headerTitle.classList.add("title");
-  headerTitle.textContent = "Boomin` Breakfast";
-  return headerTitle;
-};
-
-const createHeaderIcon = () => {
-  const headerIcon = document.createElement("img");
-  headerIcon.classList.add("header-img");
-  headerIcon.src = PancakeIcon;
-  return headerIcon;
-};
+const header = new Element("header", "header");
+const headerLeft = new Container("headerleft", "header-left", "div");
+const headerTitle = new TextElement(
+  "headerTitle",
+  "title",
+  "div",
+  "Boomin` Breakfast"
+);
+const headerIcon = new Img("headerIcon", PancakeIcon);
 
 const appendHeaderLeft = () => {
-  const headerLeft = createHeaderLeft();
-  const headerTitle = createHeaderTitle();
-  const headerIcon = createHeaderIcon();
-  headerLeft.append(headerTitle, headerIcon);
+  const headerLeftEl = headerLeft.createContainer();
+  headerLeftEl.append(headerTitle.createTextElement(), headerIcon.createImg());
   return headerLeft;
 };
+
 const appendHeaderContainer = () => {
-  const headerContainer = createHeaderContainer();
-  const headerLeft = appendHeaderLeft();
-  headerContainer.appendChild(headerLeft);
+  const headerContainer = header.createElement();
+  const headerLeftEl = appendHeaderLeft();
+  headerContainer.append(headerLeftEl);
   return headerContainer;
 };
 

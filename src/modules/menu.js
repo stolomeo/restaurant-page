@@ -1,18 +1,11 @@
 import "../style.css";
+import { Container } from "../utils/elementClasses";
 import { clearMain } from "../utils/main";
 import { menuOptionsList } from "../utils/menuOptions";
 
-const createMenuContainer = () => {
-  const menuContainer = document.createElement("div");
-  menuContainer.classList.add("menu-container");
-  return menuContainer;
-};
+const menuContainer = new Container("menuContainer", "menu-container", "div");
 
-const createMenuCard = () => {
-  const menuCard = document.createElement("div");
-  menuCard.classList.add("menu-item");
-  return menuCard;
-};
+const menuCard = new Container("menuCard", "menu-item", "div");
 
 const createMenuImg = (src) => {
   const menuImg = document.createElement("img");
@@ -29,15 +22,15 @@ const createMenuTitle = (title) => {
 const menuOptions = menuOptionsList.map((menuOption) => {
   const menuImg = createMenuImg(menuOption.image);
   const menuTitle = createMenuTitle(menuOption.title);
-  const menuCard = createMenuCard();
-  menuCard.append(menuImg, menuTitle);
-  return menuCard;
+  const menuCardEl = menuCard.createContainer();
+  menuCardEl.append(menuImg, menuTitle);
+  return menuCardEl;
 });
 
 const appendMenuContainer = () => {
-  const menuContainer = createMenuContainer();
-  menuContainer.append(...menuOptions);
-  return menuContainer;
+  const menuContainerEl = menuContainer.createContainer();
+  menuContainerEl.append(...menuOptions);
+  return menuContainerEl;
 };
 
 const appendMenuToMain = () => {
