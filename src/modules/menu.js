@@ -1,13 +1,13 @@
-import "./style.css";
-import AvocadoToast from "./images/avocado-toast.png";
-import BuscuitsAndTurkeySausage from "./images/biscuits-and-turkey-sausage.png";
-import Chickichanga from "./images/chickichanga.png";
-import ElevatedEggSandwich from "./images/elevated-egg-sandwich.png";
-import FrenchToast from "./images/french-toast.png";
-import MultigrainPancake from "./images/multigrain-pancake.png";
-import SmokedSalmonBenedict from "./images/smoked-salmon-benedict.png";
-import Traditional from "./images/the-traditional.png";
-import Trifecta from "./images/trifecta.png";
+import "../style.css";
+import AvocadoToast from "./assets/avocado-toast.png";
+import BuscuitsAndTurkeySausage from "./assets/biscuits-and-turkey-sausage.png";
+import Chickichanga from "./assets/chickichanga.png";
+import ElevatedEggSandwich from "./assets/elevated-egg-sandwich.png";
+import FrenchToast from "./assets/french-toast.png";
+import MultigrainPancake from "./assets/multigrain-pancake.png";
+import SmokedSalmonBenedict from "./assets/smoked-salmon-benedict.png";
+import Traditional from "./assets/the-traditional.png";
+import Trifecta from "./assets/trifecta.png";
 
 const menuLoad = () => {
   const main = document.querySelector("main");

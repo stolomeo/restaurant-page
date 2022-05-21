@@ -1,6 +1,4 @@
-import "./style.css";
-
-//Create Form
+import "../style.css";
 
 const formConstructor = (tagName, type, className, placeholder) => {
   let el = document.createElement(tagName);
