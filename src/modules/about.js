@@ -8,6 +8,7 @@ const formConstructor = (tagName, type, className, placeholder) => {
   el.setAttribute("placeholder", placeholder);
   return el;
 };
+
 const submitBtnConstructor = (type, value) => {
   let el = document.createElement("input");
   el.setAttribute("type", type);
@@ -15,33 +16,41 @@ const submitBtnConstructor = (type, value) => {
   return el;
 };
 
-const aboutLoad = () => {
-  const main = clearMain();
+const createFormHeader = () => {
   const formHeader = document.createElement("h2");
-  const formContainerEl = document.createElement("div");
-
-  const name = formConstructor("input", "text", "userinfo", "Name: ");
-  const phoneNumber = formConstructor(
-    "input",
-    "number",
-    "userinfo",
-    "Phone No: "
-  );
-  const email = formConstructor(
-    "input",
-    "email",
-    "userinfo",
-    "Email Address: "
-  );
-  const message = formConstructor("textarea", "text", "userinfo", "Message: ");
-  const submit = submitBtnConstructor("submit", "SUBMIT");
-
   formHeader.textContent = "CONTACT US";
 
-  formContainerEl.setAttribute("class", "form-container");
-  main.append(formHeader, formContainerEl);
-
-  formContainerEl.append(name, phoneNumber, email, message, submit);
+  return formHeader;
 };
 
-export default aboutLoad;
+const createFormContainer = () => {
+  const formContainer = document.createElement("div");
+  formContainer.classList.add("form-container");
+  return formContainer;
+};
+
+const name = formConstructor("input", "text", "userinfo", "Name: ");
+const phoneNumber = formConstructor(
+  "input",
+  "number",
+  "userinfo",
+  "Phone No: "
+);
+const email = formConstructor("input", "email", "userinfo", "Email Address: ");
+const message = formConstructor("textarea", "text", "userinfo", "Message: ");
+const submit = submitBtnConstructor("submit", "SUBMIT");
+
+const appendFormContainer = () => {
+  const formContainer = createFormContainer();
+  formContainer.append(name, phoneNumber, email, message, submit);
+  return formContainer;
+};
+
+const appendFormToMain = () => {
+  const main = clearMain();
+  const formHeader = createFormHeader();
+  const formContainer = appendFormContainer();
+  main.append(formHeader, formContainer);
+};
+
+export default appendFormToMain;
