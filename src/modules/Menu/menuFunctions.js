@@ -1,4 +1,6 @@
-import { selectMain } from "../../utils/main";
+import "../../style.css";
+import { clearMain } from "../../utils/main";
+
 import { menuCardEl, menuContainerEl } from "./menuElements";
 import { menuOptionsList } from "./menuOptionsList";
 
@@ -27,7 +29,7 @@ export const createMenu = () => {
 };
 
 export const loadMenu = () => {
-  const main = selectMain();
+  const main = clearMain();
   main.append(createMenu());
   return main;
 };

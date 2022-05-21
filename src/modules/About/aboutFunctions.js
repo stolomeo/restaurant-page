@@ -10,15 +10,18 @@ import {
 } from "./aboutElements";
 
 export const createForm = () => {
-  return formContainerEl.append(
+  formContainerEl.append(
     nameInput,
     phoneInput,
     emailInput,
     messageInput,
     submitInput
   );
+  return formContainerEl;
 };
 
 export const loadAbout = () => {
-  return clearMain().append(formHeaderEl, createForm());
+  const main = clearMain();
+  main.append(formHeaderEl, createForm());
+  return main;
 };

@@ -1,5 +1,5 @@
 import { Container, Element, Img, TextElement } from "../../utils/elementClass";
-import PancakeIcon from "../../assets/pancake-blueberry.jpg";
+import PancakeIcon from "../../assets/pancake-french.svg";
 
 const headerContainer = new Element("header", "header");
 const headerLeft = new Container("headerleft", "header-left", "div");

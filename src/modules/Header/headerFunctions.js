@@ -1,4 +1,3 @@
-import "../../style.css";
 import { createNav } from "../Nav/navFunctions";
 import {
   headerContainerEl,
