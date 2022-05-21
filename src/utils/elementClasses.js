@@ -1,8 +1,8 @@
 export class Container {
-  constructor(name, type, className) {
+  constructor(name, className, type) {
     this.name = name;
-    this.type = type;
     this.className = className;
+    this.type = type;
   }
   createContainer() {
     this.name = document.createElement(this.type);
@@ -24,10 +24,10 @@ export class Img {
 }
 
 export class TextElement {
-  constructor(name, type, className, textContent) {
+  constructor(name, className, type, textContent) {
     this.name = name;
-    this.type = type;
     this.className = className;
+    this.type = type;
     this.textContent = textContent;
   }
   createTextElement() {
