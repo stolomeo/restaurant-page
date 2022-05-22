@@ -1,13 +1,12 @@
 import { createNav } from "../Nav/navFunctions";
 import {
   headerContainerEl,
-  headerIconEl,
   headerLeftEl,
-  headerTitleEl,
+  headerLogoEl,
 } from "./headerElements";
 
 export const createHeaderLeft = () => {
-  headerLeftEl.append(headerTitleEl, headerIconEl);
+  headerLeftEl.append(headerLogoEl);
   return headerLeftEl;
 };
 

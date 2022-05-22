@@ -1,19 +1,12 @@
-import { Container, Element, Img, TextElement } from "../../utils/elementClass";
-import PancakeIcon from "../../assets/pancake-french.svg";
+import { Container, Element, Img } from "../../utils/elementClass";
+import HeaderLogo from "../../assets/Barista-transparent.png";
 
 const headerContainer = new Element("header", "header");
 const headerLeft = new Container("headerleft", "header-left", "div");
-const headerTitle = new TextElement(
-  "headerTitle",
-  "title",
-  "div",
-  "Boomin` Breakfast"
-);
-const headerIcon = new Img("headerIcon", PancakeIcon);
+const headerLogo = new Img("headerLogo", HeaderLogo);
 
 const headerContainerEl = headerContainer.createElement();
 const headerLeftEl = headerLeft.createContainer();
-const headerTitleEl = headerTitle.createTextElement();
-const headerIconEl = headerIcon.createImg();
+const headerLogoEl = headerLogo.createImg();
 
-export { headerContainerEl, headerLeftEl, headerTitleEl, headerIconEl };
+export { headerContainerEl, headerLeftEl, headerLogoEl };
