@@ -1,8 +1,6 @@
-import Pancake from "../../assets/pancake-blueberry.jpg";
-import { Container, Img, TextElement } from "../../utils/elementClass";
+import { Container, TextElement } from "../../utils/elementClass";
 
 const homeContainer = new Container("homeContainer", "home-container", "div");
-const homeImg = new Img("homeImg", Pancake);
 const homeDescription = new TextElement(
   "homeDescrption",
   "home-description",
@@ -13,7 +11,6 @@ const homeDescription = new TextElement(
 );
 
 const homeContainerEl = homeContainer.createContainer();
-const homeImgEl = homeImg.createImg();
 const homeDescriptionEl = homeDescription.createTextElement();
 
-export { homeContainerEl, homeImgEl, homeDescriptionEl };
+export { homeContainerEl, homeDescriptionEl };

@@ -22,12 +22,13 @@ img {
   max-width: 100%;
   height: auto;
 }
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: aqua;
   padding: 1.5rem 150px;
+  background-color: rgba(101, 96, 96, 0.535);
 }
 .home-container {
   display: flex;
@@ -37,6 +38,11 @@ header {
   padding-left: 150px;
   padding-right: 150px;
   font-size: 1.5rem;
+  background-image: url(./assets/background.jpg);
+  background-size: 100%;
+  height: 100vh;
+  background-position: center;
+  background-attachment: fixed;
 }
 .menu-container {
   display: flex;
@@ -148,7 +154,10 @@ textarea {
   background: #cc4949;
 }
 .home-description {
-  padding: 50px;
+  padding: 0 5rem;
+  margin-bottom: 250px;
+  color: white;
+  font-weight: bolder;
   text-align: center;
   font-size: 32px;
 }
