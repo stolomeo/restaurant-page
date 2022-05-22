@@ -1,7 +1,7 @@
 import "../../style.css";
 import { clearMain } from "../../utils/main";
 
-import { menuCardEl, menuContainerEl } from "./menuElements";
+import { menuCard, menuContainerEl } from "./menuElements";
 import { menuOptionsList } from "./menuOptionsList";
 
 export const createMenuTitle = (title) => {
@@ -19,7 +19,9 @@ export const createMenuImg = (src) => {
 export const menuOptions = menuOptionsList.map((menuOption) => {
   const menuImg = createMenuImg(menuOption.image);
   const menuTitle = createMenuTitle(menuOption.title);
+  const menuCardEl = menuCard.createContainer();
   menuCardEl.append(menuImg, menuTitle);
+  menuContainerEl.append(menuCardEl);
   return menuCardEl;
 });
 

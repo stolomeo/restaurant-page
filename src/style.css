@@ -45,6 +45,10 @@ header {
   padding: 1.5rem 150px;
   justify-content: center;
 }
+header img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
 
 .menu-item {
   display: flex;
@@ -83,10 +87,11 @@ button {
 }
 .header-left {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .home-container img {
-  flex-basis: 50%;
-  width: 15%;
+  width: 30%;
 }
 h2 {
   text-align: center;
@@ -144,7 +149,4 @@ textarea {
   padding: 50px;
   text-align: center;
   font-size: 32px;
-}
-.header-img {
-  width: 40px;
 }
